@@ -47,3 +47,17 @@ yarn create react-app my-app --template redux-typescript]
 },
 }
 ]
+
+_evenet 型定義_
+
+[
+type Props = {
+onClick: (event: React.MouseEvent<HTMLInputElement>) => void
+onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+onkeypress: (event: React.KeyboardEvent<HTMLInputElement>) => void
+onBlur: (event: React.FocusEvent<HTMLInputElement>) => void
+onFocus: (event: React.FocusEvent<HTMLInputElement>) => void
+onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+onClickDiv: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+}
+]

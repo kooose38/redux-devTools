@@ -1,59 +1,38 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import { makeStyles } from "@material-ui/styles";
+import Nav from "./components/Nav";
+import TaskForm from "./task/taskForm/TaskForm";
+import TaskList from "./task/taskList/taskList";
 
-function App() {
+const useStyles = makeStyles({
+  root: {
+    width: "100vw",
+    height: "100vh",
+    background: "skyblue",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  warpper: {
+    height: "70vh",
+    width: "70vw",
+    borderRadius: 10,
+    background: "#444",
+    padding: "10px 40px",
+  },
+});
+
+const App: React.FC = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-        <div></div>
-      </header>
+    <div className={classes.root}>
+      <div className={classes.warpper}>
+        <Nav />
+        <TaskForm />
+        <TaskList />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
